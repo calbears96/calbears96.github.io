@@ -1,0 +1,33 @@
+---
+title: "DataProductsWeek3Project"
+author: "Mike G."
+date: "4/21/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+library(TTR)
+library(quantmod)
+```
+
+## R Markdown
+April 23, 2018
+
+```{r}
+#pull stock data
+getSymbols('GOOGL', src='yahoo')
+
+#get the chart ready
+df= data.frame(Date = index(GOOGL), coredata(GOOGL))
+
+g = df %>%
+  plot_ly(x = ~ Date, type='ohlc',
+          open = ~GOOGL.Open, close=~GOOGL.Close,
+          high = ~GOOGL.High, low=~GOOGL.Low) %>%
+  layout(title='Google OHLC Chart')
+
+#show plot
+g
+```
