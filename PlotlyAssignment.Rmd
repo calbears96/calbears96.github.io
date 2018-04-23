@@ -1,7 +1,8 @@
 ---
-title: "April 23, 2018"
-
-output: html_document
+title: "PlotlyAssignment"
+author: "Mike G."
+date: "4/23/2018"
+output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
@@ -13,6 +14,13 @@ options("getSymbols.yahoo.warning"=FALSE)
 options("getSymbols.warning4.0"=FALSE)
 ```
 
+
+## Plotly Assignment
+
+This simple presentation shows an open, high, low, and close chart for Google's
+stock price (GOOGL) using the quantmod package and plotly.
+
+## Slide with Plot
 
 ```{r, echo=FALSE, include=FALSE}
 #pull stock data
@@ -32,3 +40,4 @@ g = df %>%
 #show plot
 g
 ```
+
