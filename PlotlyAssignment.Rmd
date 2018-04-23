@@ -1,24 +1,25 @@
 ---
-title: "DataProductsWeek3Project"
-author: "Mike G."
-date: "4/21/2018"
+title: "April 23, 2018"
+
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(plotly)
 library(TTR)
 library(quantmod)
+options("getSymbols.yahoo.warning"=FALSE)
+options("getSymbols.warning4.0"=FALSE)
 ```
 
-## R Markdown
-April 23, 2018
 
-```{r}
+```{r, echo=FALSE, include=FALSE}
 #pull stock data
 getSymbols('GOOGL', src='yahoo')
+```
 
+```{r}
 #get the chart ready
 df= data.frame(Date = index(GOOGL), coredata(GOOGL))
 
